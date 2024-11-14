@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+# Obtiene la temperatura del CPU usando el comando sensors
+
+temp=$(sensors | grep 'Core 0' | awk '{print $3}')
+
+
+# Formatea la salida para que tenga el símbolo de grados
+
+formatted_temp="${temp:1}º"
+
+
+# Imprime la temperatura formateada
+
+echo $formatted_temp
